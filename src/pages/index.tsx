@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { QrReader } from 'react-qr-reader'
 
-export default function Home() {
+const Home = () => {
   const [data, setData] = useState('No result')
 
   return (
@@ -22,3 +22,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home

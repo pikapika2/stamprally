@@ -1,0 +1,45 @@
+{
+  "name": "next.js-template",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,less,sass,scss}": [
+      "stylelint --fix"
+    ]
+  },
+  "dependencies": {
+    "eslint-config-prettier": "8.5.0",
+    "next": "12.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "13.4.0",
+    "@types/jest": "27.5.2",
+    "@types/node": "16.11.59",
+    "@types/react": "18.0.20",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0",
+    "husky": "7.0.4",
+    "jest": "27.5.1",
+    "lint-staged": "12.4.1",
+    "prettier": "2.6.2",
+    "stylelint": "14.11.0",
+    "stylelint-config-recommended": "9.0.0",
+    "ts-jest": "27.1.4",
+    "typescript": "4.8.3"
+  }
+}

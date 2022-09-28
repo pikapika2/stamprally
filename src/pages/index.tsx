@@ -1,30 +1,13 @@
 import React, { useState } from 'react'
 import { QrReader } from 'react-qr-reader'
+import Image from 'next/image'
+import sampleImage from '../image/computer_woman.png'
 
 const Home = () => {
-  //const [data, setData] = useState('No result')
-
-  /*return (
-    <>
-      <QrReader
-
-        onResult={(result, error) => {
-          if (!!result) {
-            setData(result?.getText())
-          }
-
-          if (!!error) {
-            console.info(error)
-          }
-        }}
-      />
-      <p>{data}</p>
-    </>
-  )*/
-
   const delay = 500
   const [data, setData] = useState('')
   const [error, setError] = useState('')
+  const [visible, setVisible] = useState(false)
   const handleScan = (result: any, error: Error | undefined | null) => {
     if (!!result) {
       setData(result?.getText())
@@ -46,16 +29,20 @@ const Home = () => {
   return (
     <div className="App">
       <h1>QR Scanner demo</h1>
-
+      <button onClick={() => setVisible(!visible)}>
+        {visible ? '画面を閉じる' : 'QRコードを読み込む'}
+      </button>
       <div>
-        <QrReader
-          className={'videoStyle'}
-          constraints={{
-            facingMode: { ideal: 'environment' },
-          }}
-          scanDelay={delay}
-          onResult={handleScan}
-        />
+        {visible && (
+          <QrReader
+            className={'videoStyle'}
+            constraints={{
+              facingMode: { ideal: 'environment' },
+            }}
+            scanDelay={delay}
+            onResult={handleScan}
+          />
+        )}
         <p>Here are the results</p>
         {data && (
           <p>
@@ -68,6 +55,11 @@ const Home = () => {
           </p>
         )}
       </div>
+      <Image src={sampleImage} />
+      <Image src={sampleImage} />
+      <Image src={sampleImage} />
+      <Image src={sampleImage} />
+      <Image src={sampleImage} />
     </div>
   )
 }

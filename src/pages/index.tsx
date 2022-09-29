@@ -55,11 +55,13 @@ const Home = () => {
           </p>
         )}
       </div>
-      <Image src={sampleImage} />
-      <Image src={sampleImage} />
-      <Image src={sampleImage} />
-      <Image src={sampleImage} />
-      <Image src={sampleImage} />
+      <div>
+        <Image src={sampleImage} width={150} height={150} />
+        <Image src={sampleImage} width={150} height={150} />
+      </div>
+      <Image src={sampleImage} width={150} height={150} />
+      <Image src={sampleImage} width={150} height={150} />
+      <Image src={sampleImage} width={150} height={150} />
     </div>
   )
 }

@@ -32,6 +32,7 @@ const Home = () => {
     s5 = true
   }
 
+  const delay = 500
   const [data, setData] = useState('')
   const [error, setError] = useState('')
   const [visible, setVisible] = useState(false)

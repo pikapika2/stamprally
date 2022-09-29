@@ -31,7 +31,7 @@ const Home = () => {
     console.log('aaa')
     s5 = true
   }
-  const delay = 500
+
   const [data, setData] = useState('')
   const [error, setError] = useState('')
   const [visible, setVisible] = useState(false)
@@ -44,18 +44,12 @@ const Home = () => {
   const handleScan = (result: any, error: Error | undefined | null) => {
     if (!!result) {
       setData(result?.getText())
-      //stampVisible(result?.getText())
-      // TODO: We can redirect here to another
-      // page since we have the result.
     } else {
       setData('')
     }
     if (!!error) {
       setError(error?.message)
     } else {
-      // Reset the error since we don't
-      // need it to be displayed as constant
-      // error - only while it's occurring.
       setError('')
     }
   }

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import sampleImage from '../image/computer_woman.png'
 
 const Home = () => {
-  const cookies = parseCookies()
+  /*const cookies = parseCookies()
   let s1,
     s2,
     s3,
@@ -16,31 +16,31 @@ const Home = () => {
     s1 = true
   }
   if (cookies.fromClient2 !== undefined) {
-    console.log('aaa')
+    console.log('bbb')
     s2 = true
   }
   if (cookies.fromClient3 !== undefined) {
-    console.log('aaa')
+    console.log('ccc')
     s3 = true
   }
   if (cookies.fromClient4 !== undefined) {
-    console.log('aaa')
+    console.log('ddd')
     s4 = true
   }
   if (cookies.fromClient5 !== undefined) {
-    console.log('aaa')
+    console.log('eee')
     s5 = true
-  }
+  }*/
 
   const delay = 500
   const [data, setData] = useState('')
   const [error, setError] = useState('')
   const [visible, setVisible] = useState(false)
-  const [stamp1, setStamp1] = useState(s1)
-  const [stamp2, setStamp2] = useState(s2)
-  const [stamp3, setStamp3] = useState(s3)
-  const [stamp4, setStamp4] = useState(s4)
-  const [stamp5, setStamp5] = useState(s5)
+  const [stamp1, setStamp1] = useState(false)
+  const [stamp2, setStamp2] = useState(false)
+  const [stamp3, setStamp3] = useState(false)
+  const [stamp4, setStamp4] = useState(false)
+  const [stamp5, setStamp5] = useState(false)
 
   const handleScan = (result: any, error: Error | undefined | null) => {
     if (!!result) {
@@ -56,6 +56,27 @@ const Home = () => {
   }
 
   useEffect(() => {
+    const cookies = parseCookies()
+    if (cookies.fromClient1 !== undefined) {
+      console.log('aaa')
+      setStamp1(true)
+    }
+    if (cookies.fromClient2 !== undefined) {
+      console.log('bbb')
+      setStamp2(true)
+    }
+    if (cookies.fromClient3 !== undefined) {
+      console.log('ccc')
+      setStamp3(true)
+    }
+    if (cookies.fromClient4 !== undefined) {
+      console.log('ddd')
+      setStamp4(true)
+    }
+    if (cookies.fromClient5 !== undefined) {
+      console.log('eee')
+      setStamp5(true)
+    }
     console.log(data)
     if (data === 'No1') {
       setStamp1(true)

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import sampleImage from '../image/computer_woman.png'
 
 const Home = () => {
-  const cookies = parseCookies()
+  /*const cookies = parseCookies()
   let s1,
     s2,
     s3,
@@ -16,31 +16,31 @@ const Home = () => {
     s1 = true
   }
   if (cookies.fromClient2 !== undefined) {
-    console.log('aaa')
+    console.log('bbb')
     s2 = true
   }
   if (cookies.fromClient3 !== undefined) {
-    console.log('aaa')
+    console.log('ccc')
     s3 = true
   }
   if (cookies.fromClient4 !== undefined) {
-    console.log('aaa')
+    console.log('ddd')
     s4 = true
   }
   if (cookies.fromClient5 !== undefined) {
-    console.log('aaa')
+    console.log('eee')
     s5 = true
-  }
+  }*/
 
   const delay = 500
   const [data, setData] = useState('')
   const [error, setError] = useState('')
   const [visible, setVisible] = useState(false)
-  const [stamp1, setStamp1] = useState(s1)
-  const [stamp2, setStamp2] = useState(s2)
-  const [stamp3, setStamp3] = useState(s3)
-  const [stamp4, setStamp4] = useState(s4)
-  const [stamp5, setStamp5] = useState(s5)
+  const [stamp1, setStamp1] = useState(false)
+  const [stamp2, setStamp2] = useState(false)
+  const [stamp3, setStamp3] = useState(false)
+  const [stamp4, setStamp4] = useState(false)
+  const [stamp5, setStamp5] = useState(false)
 
   const handleScan = (result: any, error: Error | undefined | null) => {
     if (!!result) {
@@ -56,38 +56,59 @@ const Home = () => {
   }
 
   useEffect(() => {
+    const cookies = parseCookies()
+    if (cookies.fromClient1 !== undefined) {
+      console.log('aaa')
+      setStamp1(true)
+    }
+    if (cookies.fromClient2 !== undefined) {
+      console.log('bbb')
+      setStamp2(true)
+    }
+    if (cookies.fromClient3 !== undefined) {
+      console.log('ccc')
+      setStamp3(true)
+    }
+    if (cookies.fromClient4 !== undefined) {
+      console.log('ddd')
+      setStamp4(true)
+    }
+    if (cookies.fromClient5 !== undefined) {
+      console.log('eee')
+      setStamp5(true)
+    }
     console.log(data)
     if (data === 'No1') {
       setStamp1(true)
-      setCookie(null, 'fromClient1', 'keyword', {
+      setCookie(null, 'fromClient1', process.env.NEXT_PUBLIC_KEYWORD1, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
     }
     if (data === 'No2') {
       setStamp2(true)
-      setCookie(null, 'fromClient2', 'keyword', {
+      setCookie(null, 'fromClient2', process.env.NEXT_PUBLIC_KEYWORD2, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
     }
     if (data === 'No3') {
       setStamp3(true)
-      setCookie(null, 'fromClient3', 'keyword', {
+      setCookie(null, 'fromClient3', process.env.NEXT_PUBLIC_KEYWORD3, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
     }
     if (data === 'No4') {
       setStamp4(true)
-      setCookie(null, 'fromClient4', 'keyword', {
+      setCookie(null, 'fromClient4', process.env.NEXT_PUBLIC_KEYWORD4, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
     }
     if (data === 'No5') {
       setStamp5(true)
-      setCookie(null, 'fromClient5', 'keyword', {
+      setCookie(null, 'fromClient5', process.env.NEXT_PUBLIC_KEYWORD5, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
@@ -135,14 +156,39 @@ const Home = () => {
         )}
       </div>
       <div>
-        {stamp1 && <Image src={sampleImage} width={150} height={150} />}
-        {stamp2 && <Image src={sampleImage} width={150} height={150} />}
+        {stamp1 && (
+          <>
+            <Image src={sampleImage} width={150} height={150} />{' '}
+            <p>{process.env.NEXT_PUBLIC_KEYWORD1}</p>
+          </>
+        )}
+        {stamp2 && (
+          <>
+            <Image src={sampleImage} width={150} height={150} />{' '}
+            <p>{process.env.NEXT_PUBLIC_KEYWORD2}</p>
+          </>
+        )}
       </div>
       <div>
-        {stamp3 && <Image src={sampleImage} width={150} height={150} />}
-        {stamp4 && <Image src={sampleImage} width={150} height={150} />}
+        {stamp3 && (
+          <>
+            <Image src={sampleImage} width={150} height={150} />{' '}
+            <p>{process.env.NEXT_PUBLIC_KEYWORD3}</p>
+          </>
+        )}
+        {stamp4 && (
+          <>
+            <Image src={sampleImage} width={150} height={150} />{' '}
+            <p>{process.env.NEXT_PUBLIC_KEYWORD4}</p>
+          </>
+        )}
       </div>
-      {stamp5 && <Image src={sampleImage} width={150} height={150} />}
+      {stamp5 && (
+        <>
+          <Image src={sampleImage} width={150} height={150} />{' '}
+          <p>{process.env.NEXT_PUBLIC_KEYWORD5}</p>
+        </>
+      )}
     </div>
   )
 }

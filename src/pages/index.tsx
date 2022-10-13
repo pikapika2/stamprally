@@ -8,6 +8,8 @@ import image3 from '../image/3.png'
 import image4 from '../image/4.png'
 import image5 from '../image/5.png'
 
+const stampSize = 100
+
 const Home = () => {
   const delay = 500
   const [data, setData] = useState('')
@@ -124,7 +126,7 @@ const Home = () => {
       <div className="horizon">
         {stamp1 && (
           <>
-            <Image src={image1} width={130} height={130} />{' '}
+            <Image src={image1} width={stampSize} height={stampSize} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD1}</p>
           </>
         )}
@@ -132,7 +134,7 @@ const Home = () => {
       <div className="horizon">
         {stamp2 && (
           <>
-            <Image src={image2} width={130} height={130} />{' '}
+            <Image src={image2} width={stampSize} height={stampSize} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD2}</p>
           </>
         )}
@@ -140,7 +142,7 @@ const Home = () => {
       <div>
         {stamp3 && (
           <>
-            <Image src={image3} width={150} height={150} />{' '}
+            <Image src={image3} width={stampSize} height={stampSize} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD3}</p>
           </>
         )}
@@ -148,7 +150,7 @@ const Home = () => {
       <div className="horizon">
         {stamp4 && (
           <>
-            <Image src={image4} width={150} height={150} />{' '}
+            <Image src={image4} width={stampSize} height={stampSize} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD4}</p>
           </>
         )}
@@ -156,7 +158,7 @@ const Home = () => {
       <div className="horizon">
         {stamp5 && (
           <>
-            <Image src={image5} width={150} height={150} />{' '}
+            <Image src={image5} width={stampSize} height={stampSize} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD5}</p>
           </>
         )}

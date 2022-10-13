@@ -9,33 +9,6 @@ import image4 from '../image/4.png'
 import image5 from '../image/5.png'
 
 const Home = () => {
-  /*const cookies = parseCookies()
-  let s1,
-    s2,
-    s3,
-    s4,
-    s5: boolean = false
-  if (cookies.fromClient1 !== undefined) {
-    console.log('aaa')
-    s1 = true
-  }
-  if (cookies.fromClient2 !== undefined) {
-    console.log('bbb')
-    s2 = true
-  }
-  if (cookies.fromClient3 !== undefined) {
-    console.log('ccc')
-    s3 = true
-  }
-  if (cookies.fromClient4 !== undefined) {
-    console.log('ddd')
-    s4 = true
-  }
-  if (cookies.fromClient5 !== undefined) {
-    console.log('eee')
-    s5 = true
-  }*/
-
   const delay = 500
   const [data, setData] = useState('')
   const [error, setError] = useState('')
@@ -118,17 +91,6 @@ const Home = () => {
       })
     }
   }, [data])
-
-  /*  const stampVisible = (qrData) => {
-    console.log(qrData)
-    if(qrData === 'No1'){
-      setStamp1(true)
-      setCookie(null, 'fromClient1', 'keyword', {
-        maxAge: 30 * 24 * 60 * 60,
-        path: '/',
-      })
-    }
-  }}*/
 
   return (
     <div className="App">

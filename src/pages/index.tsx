@@ -94,7 +94,7 @@ const Home = () => {
 
   return (
     <div className="App">
-      <h1>スタンプラリー</h1>
+      <h1>讃工祭スタンプラリー</h1>
       <button onClick={() => setVisible(!visible)}>
         {visible ? '画面を閉じる' : 'QRコードを読み込む'}
       </button>

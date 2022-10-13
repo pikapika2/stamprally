@@ -94,7 +94,7 @@ const Home = () => {
 
   return (
     <div className="App">
-      <h1>QR Scanner demo</h1>
+      <h1>スタンプラリー</h1>
       <button onClick={() => setVisible(!visible)}>
         {visible ? '画面を閉じる' : 'QRコードを読み込む'}
       </button>
@@ -121,16 +121,18 @@ const Home = () => {
           </p>
         )}
       </div>
-      <div>
+      <div className="horizon">
         {stamp1 && (
           <>
-            <Image src={image1} width={150} height={150} />{' '}
+            <Image src={image1} width={130} height={130} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD1}</p>
           </>
         )}
+      </div>
+      <div className="horizon">
         {stamp2 && (
           <>
-            <Image src={image2} width={150} height={150} />{' '}
+            <Image src={image2} width={130} height={130} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD2}</p>
           </>
         )}
@@ -142,6 +144,8 @@ const Home = () => {
             <p>{process.env.NEXT_PUBLIC_KEYWORD3}</p>
           </>
         )}
+      </div>
+      <div className="horizon">
         {stamp4 && (
           <>
             <Image src={image4} width={150} height={150} />{' '}
@@ -149,12 +153,18 @@ const Home = () => {
           </>
         )}
       </div>
-      {stamp5 && (
-        <>
-          <Image src={image5} width={150} height={150} />{' '}
-          <p>{process.env.NEXT_PUBLIC_KEYWORD5}</p>
-        </>
-      )}
+      <div className="horizon">
+        {stamp5 && (
+          <>
+            <Image src={image5} width={150} height={150} />{' '}
+            <p>{process.env.NEXT_PUBLIC_KEYWORD5}</p>
+          </>
+        )}
+      </div>
+      <link
+        href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
+        rel="stylesheet"
+      />
     </div>
   )
 }

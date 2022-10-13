@@ -1,0 +1,20 @@
+html{
+	background-color: whitesmoke;
+}
+
+h1{
+	font-family: "Nico Moji", sans-serif;
+}
+
+div {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+.horizon{
+	display: inline-block;
+	width: 50%;
+}

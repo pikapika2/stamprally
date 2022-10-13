@@ -139,7 +139,7 @@ const Home = () => {
           </>
         )}
       </div>
-      <div>
+      <div className="image_center horizon">
         {stamp3 && (
           <>
             <Image src={image3} width={stampSize} height={stampSize} />{' '}
@@ -147,6 +147,7 @@ const Home = () => {
           </>
         )}
       </div>
+      <br />
       <div className="horizon">
         {stamp4 && (
           <>

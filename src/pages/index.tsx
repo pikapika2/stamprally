@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { QrReader } from 'react-qr-reader'
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
 import Image from 'next/image'
-import sampleImage from '../image/computer_woman.png'
+import image1 from '../image/1.png'
+import image2 from '../image/2.png'
+import image3 from '../image/3.png'
+import image4 from '../image/4.png'
+import image5 from '../image/5.png'
 
 const Home = () => {
   /*const cookies = parseCookies()
@@ -158,13 +162,13 @@ const Home = () => {
       <div>
         {stamp1 && (
           <>
-            <Image src={sampleImage} width={150} height={150} />{' '}
+            <Image src={image1} width={150} height={150} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD1}</p>
           </>
         )}
         {stamp2 && (
           <>
-            <Image src={sampleImage} width={150} height={150} />{' '}
+            <Image src={image2} width={150} height={150} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD2}</p>
           </>
         )}
@@ -172,20 +176,20 @@ const Home = () => {
       <div>
         {stamp3 && (
           <>
-            <Image src={sampleImage} width={150} height={150} />{' '}
+            <Image src={image3} width={150} height={150} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD3}</p>
           </>
         )}
         {stamp4 && (
           <>
-            <Image src={sampleImage} width={150} height={150} />{' '}
+            <Image src={image4} width={150} height={150} />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD4}</p>
           </>
         )}
       </div>
       {stamp5 && (
         <>
-          <Image src={sampleImage} width={150} height={150} />{' '}
+          <Image src={image5} width={150} height={150} />{' '}
           <p>{process.env.NEXT_PUBLIC_KEYWORD5}</p>
         </>
       )}

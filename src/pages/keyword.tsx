@@ -7,6 +7,7 @@ type Props = {
 const Keyword: React.FC<Props> = (allStamp, onChange) => {
   const [keyword, setKeyword] = useState('')
   const [correct1, setCorrect1] = useState(false)
+  const [hint, setHint] = useState(false)
   function keywordCheck() {
     if (keyword === process.env.NEXT_PUBLIC_ANSWER) {
       setCorrect1(true)
@@ -15,7 +16,7 @@ const Keyword: React.FC<Props> = (allStamp, onChange) => {
 
   return (
     <div>
-      <p>キーワードを入力！</p>
+      <p>キーワードをにゅうりょく！</p>
       <input
         defaultValue=""
         onChange={() => setKeyword(event.target.value)}
@@ -26,13 +27,22 @@ const Keyword: React.FC<Props> = (allStamp, onChange) => {
         className="button_image"
         onClick={() => keywordCheck()}
       >
-        キーワード送信
+        こたえる(ひらがなでかいてね)
       </button>
       {correct1 && (
         <>
-          <p>キーワード1正解!!!</p>
+          <p>せいかい!!!</p>
         </>
       )}
+      {!allStamp.allStamp && (
+        <>
+          <br />
+          <button className="button_image" onClick={() => setHint(true)}>
+            ヒント
+          </button>
+        </>
+      )}
+      {hint && <p>それぞれのキーワードのさいしょのもじをみてみよう</p>}
     </div>
   )
 }

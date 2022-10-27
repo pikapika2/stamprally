@@ -12,6 +12,7 @@ declare global {
       NEXT_PUBLIC_QR3: string
       NEXT_PUBLIC_QR4: string
       NEXT_PUBLIC_QR5: string
+      NEXT_PUBLIC_ANSWER: string
     }
   }
 }

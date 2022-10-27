@@ -8,7 +8,7 @@ const Keyword: React.FC<Props> = (allStamp, onChange) => {
   const [keyword, setKeyword] = useState('')
   const [correct1, setCorrect1] = useState(false)
   function keywordCheck() {
-    if (keyword === 'アイウエオ') {
+    if (keyword === process.env.NEXT_PUBLIC_ANSWER) {
       setCorrect1(true)
     }
   }

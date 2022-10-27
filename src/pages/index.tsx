@@ -59,35 +59,35 @@ const Home = () => {
       setStamp5(true)
     }
     console.log(data)
-    if (data === 'No1') {
+    if (data === process.env.NEXT_PUBLIC_QR1) {
       setStamp1(true)
       setCookie(null, 'fromClient1', process.env.NEXT_PUBLIC_KEYWORD1, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
     }
-    if (data === 'No2') {
+    if (data === process.env.NEXT_PUBLIC_QR2) {
       setStamp2(true)
       setCookie(null, 'fromClient2', process.env.NEXT_PUBLIC_KEYWORD2, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
     }
-    if (data === 'No3') {
+    if (data === process.env.NEXT_PUBLIC_QR3) {
       setStamp3(true)
       setCookie(null, 'fromClient3', process.env.NEXT_PUBLIC_KEYWORD3, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
     }
-    if (data === 'No4') {
+    if (data === process.env.NEXT_PUBLIC_QR4) {
       setStamp4(true)
       setCookie(null, 'fromClient4', process.env.NEXT_PUBLIC_KEYWORD4, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
     }
-    if (data === 'No5') {
+    if (data === process.env.NEXT_PUBLIC_QR5) {
       setStamp5(true)
       setCookie(null, 'fromClient5', process.env.NEXT_PUBLIC_KEYWORD5, {
         maxAge: 30 * 24 * 60 * 60,

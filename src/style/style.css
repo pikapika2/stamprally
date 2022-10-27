@@ -1,5 +1,5 @@
 html{
-	background-color: whitesmoke;
+	background-color: aliceblue;
 }
 
 h1{
@@ -11,8 +11,29 @@ div {
 }
 
 p {
+	font-family: "Hiragino Maru Gothic ProN", sans-serif;
 	text-align: center;
+	display: table;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left:1em;
+	padding-right:1em;
+	border-radius: 5px;
+	border: 1px solid gray;
+	background-color: lemonchiffon;
 }
+
+span{
+	background-color: aquamarine;
+}
+
+:disabled.button_image{
+	background: #9f9f9f;
+	opacity: 1;
+	cursor: no-drop;
+}
+
 
 button {
   height: 40px;
@@ -29,8 +50,8 @@ button {
 
 .horizon{
 	display: inline-block;
-	width: 45%;
-	height: 150px;
+	width: 40%;
+	height: 140px;
 	background-color: white;
 	margin: 1%;
 	border-radius: 20px;

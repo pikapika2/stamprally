@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { QrReader } from 'react-qr-reader'
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
+import Keyword from './keyword'
 import Image from 'next/image'
 import image1 from '../image/1.png'
 import image2 from '../image/2.png'
@@ -20,6 +21,7 @@ const Home = () => {
   const [stamp3, setStamp3] = useState(false)
   const [stamp4, setStamp4] = useState(false)
   const [stamp5, setStamp5] = useState(false)
+  const [allStamp, setAllStamp] = useState(true)
 
   const handleScan = (result: any, error: Error | undefined | null) => {
     if (!!result) {
@@ -94,6 +96,18 @@ const Home = () => {
     }
   }, [data])
 
+  useEffect(() => {
+    if (
+      stamp1 === true &&
+      stamp2 === true &&
+      stamp3 === true &&
+      stamp4 === true &&
+      stamp5 === true
+    ) {
+      setAllStamp(false)
+    }
+  }, [stamp1, stamp2, stamp3, stamp4, stamp5])
+
   return (
     <div className="App">
       <h1>讃工祭スタンプラリー</h1>
@@ -110,17 +124,6 @@ const Home = () => {
             scanDelay={delay}
             onResult={handleScan}
           />
-        )}
-        <p>Here are the results</p>
-        {data && (
-          <p>
-            Read: <b>{data}</b>
-          </p>
-        )}
-        {error && (
-          <p>
-            <b>{error}</b>
-          </p>
         )}
       </div>
       <div className="horizon">
@@ -164,6 +167,7 @@ const Home = () => {
           </>
         )}
       </div>
+      <Keyword allStamp={allStamp} />
       <link
         href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
         rel="stylesheet"
@@ -171,5 +175,19 @@ const Home = () => {
     </div>
   )
 }
+
+/*
+<p>Here are the results</p>
+        {data && (
+          <p>
+            Read: <b>{data}</b>
+          </p>
+        )}
+        {error && (
+          <p>
+            <b>{error}</b>
+          </p>
+        )}
+*/
 
 export default Home

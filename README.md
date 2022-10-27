@@ -4,7 +4,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## 概要
 
-QRコードを読み取ってスタンプ風イラストとキーワードを集める形式．
+QRコードを読み取ってスタンプイラストとキーワードを集める形式．
+スマホ画面のみに対応している．
 全部集めるとリアルで景品をプレゼントする．
 
 

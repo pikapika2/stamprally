@@ -13,14 +13,17 @@ const Keyword: React.FC<Props> = (allStamp, onChange) => {
       setCorrect1(true)
     }
   }
+  function keywordSetting(event: React.ChangeEvent<HTMLInputElement>) {
+    setKeyword(event.target.value)
+  }
 
   return (
     <div>
       <p>キーワードをにゅうりょく！</p>
       <input
         defaultValue=""
-        onChange={() => setKeyword(event.target.value)}
-        maxLength={20}
+        onChange={(e) => keywordSetting(e)}
+        maxLength={10}
       />
       <button
         disabled={allStamp.allStamp}

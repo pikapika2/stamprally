@@ -36,6 +36,17 @@ const Home = () => {
     }
   }
 
+  const loadCorrect = (id: string) => {
+    const blueLeft = document.getElementById(id)!.getBoundingClientRect().left
+    const blueTop = document.getElementById(id)!.getBoundingClientRect().top
+    window.scrollTo({
+      left: blueLeft,
+      top: blueTop,
+      behavior: 'smooth',
+    })
+    alert('読み込み成功！！')
+  }
+
   useEffect(() => {
     const cookies = parseCookies()
     if (cookies.fromClient1 !== undefined) {
@@ -60,6 +71,7 @@ const Home = () => {
     }
     console.log(data)
     if (data === process.env.NEXT_PUBLIC_QR1) {
+      loadCorrect('firstStamp')
       setStamp1(true)
       setCookie(null, 'fromClient1', process.env.NEXT_PUBLIC_KEYWORD1, {
         maxAge: 30 * 24 * 60 * 60,
@@ -67,6 +79,7 @@ const Home = () => {
       })
     }
     if (data === process.env.NEXT_PUBLIC_QR2) {
+      loadCorrect('secondStamp')
       setStamp2(true)
       setCookie(null, 'fromClient2', process.env.NEXT_PUBLIC_KEYWORD2, {
         maxAge: 30 * 24 * 60 * 60,
@@ -74,6 +87,7 @@ const Home = () => {
       })
     }
     if (data === process.env.NEXT_PUBLIC_QR3) {
+      loadCorrect('thirdStamp')
       setStamp3(true)
       setCookie(null, 'fromClient3', process.env.NEXT_PUBLIC_KEYWORD3, {
         maxAge: 30 * 24 * 60 * 60,
@@ -81,6 +95,7 @@ const Home = () => {
       })
     }
     if (data === process.env.NEXT_PUBLIC_QR4) {
+      loadCorrect('fourthStamp')
       setStamp4(true)
       setCookie(null, 'fromClient4', process.env.NEXT_PUBLIC_KEYWORD4, {
         maxAge: 30 * 24 * 60 * 60,
@@ -88,6 +103,7 @@ const Home = () => {
       })
     }
     if (data === process.env.NEXT_PUBLIC_QR5) {
+      loadCorrect('fifthStamp')
       setStamp5(true)
       setCookie(null, 'fromClient5', process.env.NEXT_PUBLIC_KEYWORD5, {
         maxAge: 30 * 24 * 60 * 60,
@@ -126,15 +142,20 @@ const Home = () => {
           />
         )}
       </div>
-      <div className="horizon">
+      <div className="horizon" id="firstStamp">
         {stamp1 && (
           <>
-            <Image src={image1} width={stampSize} height={stampSize} />{' '}
+            <Image
+              src={image1}
+              width={stampSize}
+              height={stampSize}
+              id="testtest"
+            />{' '}
             <p>{process.env.NEXT_PUBLIC_KEYWORD1}</p>
           </>
         )}
       </div>
-      <div className="horizon">
+      <div className="horizon" id="secondStamp">
         {stamp2 && (
           <>
             <Image src={image2} width={stampSize} height={stampSize} />{' '}
@@ -142,7 +163,7 @@ const Home = () => {
           </>
         )}
       </div>
-      <div className="image_center horizon">
+      <div className="image_center horizon" id="thirdStamp">
         {stamp3 && (
           <>
             <Image src={image3} width={stampSize} height={stampSize} />{' '}
@@ -151,7 +172,7 @@ const Home = () => {
         )}
       </div>
       <br />
-      <div className="horizon">
+      <div className="horizon" id="fourthStamp">
         {stamp4 && (
           <>
             <Image src={image4} width={stampSize} height={stampSize} />{' '}
@@ -159,7 +180,7 @@ const Home = () => {
           </>
         )}
       </div>
-      <div className="horizon">
+      <div className="horizon" id="fifthStamp">
         {stamp5 && (
           <>
             <Image src={image5} width={stampSize} height={stampSize} />{' '}

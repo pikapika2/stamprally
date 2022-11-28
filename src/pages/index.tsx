@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { QrReader } from 'react-qr-reader'
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
+import Head from 'next/head'
 import Keyword from './keyword'
 import Image from 'next/image'
 import image1 from '../image/1.png'
@@ -125,75 +126,105 @@ const Home = () => {
   }, [stamp1, stamp2, stamp3, stamp4, stamp5])
 
   return (
-    <div className="App">
-      <h1>讃工祭スタンプラリー</h1>
-      <button onClick={() => setVisible(!visible)}>
-        {visible ? '画面を閉じる' : 'QRコードを読み込む'}
-      </button>
-      <div>
-        {visible && (
-          <QrReader
-            className={'videoStyle'}
-            constraints={{
-              facingMode: { ideal: 'environment' },
-            }}
-            scanDelay={delay}
-            onResult={handleScan}
-          />
-        )}
+    <>
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+        <script
+          key="stloader"
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+    (function(e,r,n,t,s){var a=[];e[s]=function(){a.push(arguments)};e[s].queue=a;  var o=[];var i=[];var c=true;var p=void 0;if(window.PerformanceObserver&&  window.PerformanceObserver.supportedEntryTypes&&(  PerformanceObserver.supportedEntryTypes.indexOf("longtask")>=0||  PerformanceObserver.supportedEntryTypes.indexOf("element")>=0)){  p=new PerformanceObserver(function(e){e.getEntries().forEach(function(e){  switch(e.entryType){case"element":i.push(e);break;case"longtask":o.push(e);break;  default:break}})});p.observe({entryTypes:["longtask","element"]})}e[s+"lt"]={  longTasks:o,timingElements:i,inPageLoad:c,observer:p};if(t){var u=r.createElement(n);  u.async=1;u.src=t;var f=r.getElementsByTagName(n)[0];f.parentNode.insertBefore(u,f)}})
+    (window,document,"script","//cdn.sematext.com/experience.js","strum");
+  `,
+          }}
+        />
+        <script
+          key="stconfig"
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+    strum('config', { token: 'a0d0ad0c-0b51-46e8-a428-0eedf94c6e80', 'receiverUrl': 'https://rum-receiver.sematext.com' });
+    var oldPushState = history.pushState;
+    history.pushState = function(state, title, url) {
+      window['strum']('routeChange', url);
+      return oldPushState.apply(history, arguments);
+    };
+ `,
+          }}
+        />
+      </Head>
+      <div className="App">
+        <h1>讃工祭スタンプラリー</h1>
+        <button onClick={() => setVisible(!visible)}>
+          {visible ? '画面を閉じる' : 'QRコードを読み込む'}
+        </button>
+        <div>
+          {visible && (
+            <QrReader
+              className={'videoStyle'}
+              constraints={{
+                facingMode: { ideal: 'environment' },
+              }}
+              scanDelay={delay}
+              onResult={handleScan}
+            />
+          )}
+        </div>
+        <div className="horizon" id="firstStamp">
+          {stamp1 && (
+            <>
+              <Image
+                src={image1}
+                width={stampSize}
+                height={stampSize}
+                id="testtest"
+              />{' '}
+              <p>{process.env.NEXT_PUBLIC_KEYWORD1}</p>
+            </>
+          )}
+        </div>
+        <div className="horizon" id="secondStamp">
+          {stamp2 && (
+            <>
+              <Image src={image2} width={stampSize} height={stampSize} />{' '}
+              <p>{process.env.NEXT_PUBLIC_KEYWORD2}</p>
+            </>
+          )}
+        </div>
+        <div className="image_center horizon" id="thirdStamp">
+          {stamp3 && (
+            <>
+              <Image src={image3} width={stampSize} height={stampSize} />{' '}
+              <p>{process.env.NEXT_PUBLIC_KEYWORD3}</p>
+            </>
+          )}
+        </div>
+        <br />
+        <div className="horizon" id="fourthStamp">
+          {stamp4 && (
+            <>
+              <Image src={image4} width={stampSize} height={stampSize} />{' '}
+              <p>{process.env.NEXT_PUBLIC_KEYWORD4}</p>
+            </>
+          )}
+        </div>
+        <div className="horizon" id="fifthStamp">
+          {stamp5 && (
+            <>
+              <Image src={image5} width={stampSize} height={stampSize} />{' '}
+              <p>{process.env.NEXT_PUBLIC_KEYWORD5}</p>
+            </>
+          )}
+        </div>
+        <Keyword allStamp={allStamp} />
+        <link
+          href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
+          rel="stylesheet"
+        />
       </div>
-      <div className="horizon" id="firstStamp">
-        {stamp1 && (
-          <>
-            <Image
-              src={image1}
-              width={stampSize}
-              height={stampSize}
-              id="testtest"
-            />{' '}
-            <p>{process.env.NEXT_PUBLIC_KEYWORD1}</p>
-          </>
-        )}
-      </div>
-      <div className="horizon" id="secondStamp">
-        {stamp2 && (
-          <>
-            <Image src={image2} width={stampSize} height={stampSize} />{' '}
-            <p>{process.env.NEXT_PUBLIC_KEYWORD2}</p>
-          </>
-        )}
-      </div>
-      <div className="image_center horizon" id="thirdStamp">
-        {stamp3 && (
-          <>
-            <Image src={image3} width={stampSize} height={stampSize} />{' '}
-            <p>{process.env.NEXT_PUBLIC_KEYWORD3}</p>
-          </>
-        )}
-      </div>
-      <br />
-      <div className="horizon" id="fourthStamp">
-        {stamp4 && (
-          <>
-            <Image src={image4} width={stampSize} height={stampSize} />{' '}
-            <p>{process.env.NEXT_PUBLIC_KEYWORD4}</p>
-          </>
-        )}
-      </div>
-      <div className="horizon" id="fifthStamp">
-        {stamp5 && (
-          <>
-            <Image src={image5} width={stampSize} height={stampSize} />{' '}
-            <p>{process.env.NEXT_PUBLIC_KEYWORD5}</p>
-          </>
-        )}
-      </div>
-      <Keyword allStamp={allStamp} />
-      <link
-        href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
-        rel="stylesheet"
-      />
-    </div>
+    </>
   )
 }
 

@@ -7,10 +7,14 @@ type Props = {
 const Keyword: React.FC<Props> = (allStamp, onChange) => {
   const [keyword, setKeyword] = useState('')
   const [correct1, setCorrect1] = useState(false)
+  const [incorrect, setIncorrect] = useState(false)
   const [hint, setHint] = useState(false)
   function keywordCheck() {
     if (keyword === process.env.NEXT_PUBLIC_ANSWER) {
       setCorrect1(true)
+      setIncorrect(false)
+    } else {
+      setIncorrect(true)
     }
   }
   function keywordSetting(event: React.ChangeEvent<HTMLInputElement>) {
@@ -34,7 +38,12 @@ const Keyword: React.FC<Props> = (allStamp, onChange) => {
       </button>
       {correct1 && (
         <>
-          <p>せいかい!!!</p>
+          <p>せいかい!!!(このがめんをかかりのひとにみせてね)</p>
+        </>
+      )}
+      {incorrect && (
+        <>
+          <p>ちがうよ!!!</p>
         </>
       )}
       {!allStamp.allStamp && (

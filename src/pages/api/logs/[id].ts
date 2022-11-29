@@ -19,7 +19,7 @@ export default function logsApi(
   const id = req.query.id as string
   const log = fetchLogsData(id)
   if (log) {
-    res.status(200).json({ log })
+    res.status(200).json({ logs })
   } else {
     res.status(400).json({ debugMessage: `Log [id=${id}] not found` })
   }

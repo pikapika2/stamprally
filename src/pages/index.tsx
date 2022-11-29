@@ -45,17 +45,29 @@ const Home = () => {
       top: blueTop,
       behavior: 'smooth',
     })
+
     alert('読み込み成功！！')
   }
 
   useEffect(() => {
+    const postData = async (message: string) => {
+      await fetch('/api/logs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: message }),
+      })
+    }
     const cookies = parseCookies()
     if (cookies.fromClient1 !== undefined) {
       console.log('aaa')
+      postData('test1')
       setStamp1(true)
     }
     if (cookies.fromClient2 !== undefined) {
       console.log('bbb')
+      postData('test2')
       setStamp2(true)
     }
     if (cookies.fromClient3 !== undefined) {

@@ -7,7 +7,7 @@ export type Log = {
 
 // API のレスポンス型
 export type LogsApiResponse = {
-  logs?: Log
+  log?: Log
   debugMessage?: string
 }
 
@@ -19,7 +19,7 @@ export default function logsApi(
   const id = req.query.id as string
   const log = fetchLogsData(id)
   if (log) {
-    res.status(200).json({ logs })
+    res.status(200).json({ log })
   } else {
     res.status(400).json({ debugMessage: `Log [id=${id}] not found` })
   }

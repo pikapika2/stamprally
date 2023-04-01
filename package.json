@@ -23,7 +23,7 @@
   "dependencies": {
     "@types/react-qr-reader": "^2.1.4",
     "eslint-config-prettier": "8.5.0",
-    "next": "12.3.0",
+    "next": "12.3.4",
     "nookies": "^2.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -35,7 +35,7 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "eslint": "8.37.0",
-    "eslint-config-next": "12.3.0",
+    "eslint-config-next": "12.3.4",
     "husky": "8.0.3",
     "jest": "27.5.1",
     "lint-staged": "13.2.0",

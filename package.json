@@ -33,7 +33,7 @@
     "@testing-library/react": "14.0.0",
     "@types/jest": "27.5.2",
     "@types/node": "18.15.11",
-    "@types/react": "18.0.32",
+    "@types/react": "18.0.33",
     "eslint": "8.37.0",
     "eslint-config-next": "13.3.0",
     "husky": "8.0.3",

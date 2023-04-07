@@ -201,7 +201,12 @@ const Home = () => {
         <div className="horizon" id="secondStamp">
           {stamp2 && (
             <>
-              <Image src={image2} alt="スタンプ2" width={stampSize} height={stampSize} />{' '}
+              <Image
+                src={image2}
+                alt="スタンプ2"
+                width={stampSize}
+                height={stampSize}
+              />{' '}
               <p>{process.env.NEXT_PUBLIC_KEYWORD2}</p>
             </>
           )}
@@ -209,7 +214,12 @@ const Home = () => {
         <div className="image_center horizon" id="thirdStamp">
           {stamp3 && (
             <>
-              <Image src={image3} alt="スタンプ3" width={stampSize} height={stampSize} />{' '}
+              <Image
+                src={image3}
+                alt="スタンプ3"
+                width={stampSize}
+                height={stampSize}
+              />{' '}
               <p>{process.env.NEXT_PUBLIC_KEYWORD3}</p>
             </>
           )}
@@ -218,7 +228,12 @@ const Home = () => {
         <div className="horizon" id="fourthStamp">
           {stamp4 && (
             <>
-              <Image src={image4} alt="スタンプ4" width={stampSize} height={stampSize} />{' '}
+              <Image
+                src={image4}
+                alt="スタンプ4"
+                width={stampSize}
+                height={stampSize}
+              />{' '}
               <p>{process.env.NEXT_PUBLIC_KEYWORD4}</p>
             </>
           )}
@@ -226,7 +241,12 @@ const Home = () => {
         <div className="horizon" id="fifthStamp">
           {stamp5 && (
             <>
-              <Image src={image5} alt="スタンプ5" width={stampSize} height={stampSize} />{' '}
+              <Image
+                src={image5}
+                alt="スタンプ5"
+                width={stampSize}
+                height={stampSize}
+              />{' '}
               <p>{process.env.NEXT_PUBLIC_KEYWORD5}</p>
             </>
           )}

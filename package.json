@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@types/react-qr-reader": "^2.1.4",
-    "eslint-config-prettier": "8.5.0",
+    "eslint-config-prettier": "8.10.0",
     "next": "13.3.0",
     "nookies": "^2.5.2",
     "react": "18.2.0",

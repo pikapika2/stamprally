@@ -38,7 +38,7 @@
     "eslint-config-next": "13.3.0",
     "husky": "8.0.3",
     "jest": "27.5.1",
-    "lint-staged": "13.2.3",
+    "lint-staged": "14.0.1",
     "prettier": "2.8.8",
     "stylelint": "15.10.3",
     "stylelint-config-recommended": "13.0.0",

@@ -34,7 +34,7 @@
     "@types/jest": "29.5.14",
     "@types/node": "18.19.74",
     "@types/react": "18.2.31",
-    "eslint": "8.52.0",
+    "eslint": "8.57.1",
     "eslint-config-next": "13.3.0",
     "husky": "8.0.3",
     "jest": "27.5.1",
